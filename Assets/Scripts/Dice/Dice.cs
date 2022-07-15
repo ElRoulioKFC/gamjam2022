@@ -64,6 +64,9 @@ public class Dice
         }
         int totalLength = nbByteName + nbByteTypeTotal + nbByteValueTotal + (4 * 4 + 4*face*2);// nbByteName + nbByteType + nbByteValue + faceArray + nb int * 2*face
         byte[] res = AddArray(BitConverter.GetBytes(nbByteName),nameArray);
+
+
+        res = AddArray(res,faceArray);
         for (int i = 0; i < face; i++)
         {
             res = AddArray(res, BitConverter.GetBytes(nbByteType[i]));
@@ -89,18 +92,23 @@ public class Dice
     public static Dice GetDiceFromByte(byte[] array)
     {
         int streamCount = 0;
-        int nbByteName = Convert.ToInt32(Split(array,streamCount,streamCount+=4));
+        int nbByteName = BitConverter.ToInt32(array,streamCount);
+        streamCount += 4;
         string name = StringFromByte(Split(array, streamCount, streamCount += nbByteName));
-        int face = Convert.ToInt32(Split(array, streamCount, streamCount += 4));
+        int face = BitConverter.ToInt32(array,streamCount);
+        streamCount += 4;
         int nbByte = 0;
 
         string[] type = new string[face];
         string[] value = new string[face];
         for (int i = 0; i < face; i++)
         {
-            nbByte = Convert.ToInt32(Split(array, 0, streamCount += 4));
+            nbByte = BitConverter.ToInt32(array, streamCount);
+            streamCount += 4;
+
             type[i] = StringFromByte(Split(array, streamCount, streamCount += nbByte));
-            nbByte = Convert.ToInt32(Split(array, 0, streamCount += 4));
+            nbByte = BitConverter.ToInt32(array, streamCount);
+            streamCount += 4;
             value[i] = StringFromByte(Split(array, streamCount, streamCount += nbByte));
         }
 
@@ -122,18 +130,6 @@ public class Dice
     }
     public static byte[] AddArray(byte[] array1, byte[] array2)
     {
-        string str = "arr1 : ";
-        for (int i = 0; i < array1.Length; i++)
-        {
-            str += array1[i];
-        }
-        str += "arr2";
-        for (int i = 0; i < array2.Length; i++)
-        {
-            str += array2[i];
-        }
-        Debug.Log(str);
-
 
         byte[] res = new byte[array1.Length + array2.Length];
         for (int i = 0; i <array1.Length; i++)
@@ -143,16 +139,7 @@ public class Dice
         for (int i = 0; i < array2.Length; i++)
         {
             res[array1.Length + i] = array2[i];
-            Debug.Log(array2[i]);
         }
-
-
-        str = "fin : ";
-        for (int i = 0; i < res.Length; i++)
-        {
-            str += res[i];
-        }
-        Debug.Log(str);
         return res;
     }
   
