@@ -256,11 +256,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &470168114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6355458530214474864, guid: 628a8d6c7a14ddf4b9fa56ce211ad2ef, type: 3}
-  m_PrefabInstance: {fileID: 6355458530281965122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &543891720
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,11 +288,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 262268963}
-  - {fileID: 778043672}
+  - {fileID: 6972550074083335225}
   - {fileID: 56176888}
   - {fileID: 1046189503}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -584,8 +579,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230634908}
-        m_TargetAssemblyTypeName: ControllerScript, Assembly-CSharp
+      - m_Target: {fileID: 1629352531}
+        m_TargetAssemblyTypeName: ControllerFightScript, Assembly-CSharp
         m_MethodName: Button2
         m_Mode: 1
         m_Arguments:
@@ -866,16 +861,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fc279482e868464586d58b5caa72a07, type: 3}
---- !u!224 &778043672 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6972550073510812974, guid: 8fc279482e868464586d58b5caa72a07, type: 3}
-  m_PrefabInstance: {fileID: 778043671}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &778043673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6972550073510812975, guid: 8fc279482e868464586d58b5caa72a07, type: 3}
-  m_PrefabInstance: {fileID: 778043671}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1043295155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,7 +1097,7 @@ PrefabInstance:
     - target: {fileID: 6355458530214474870, guid: 628a8d6c7a14ddf4b9fa56ce211ad2ef, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 778043673}
+      objectReference: {fileID: 6972550074083335224}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 628a8d6c7a14ddf4b9fa56ce211ad2ef, type: 3}
 --- !u!1 &1049213754 stripped
@@ -1120,54 +1105,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6355458530214474864, guid: 628a8d6c7a14ddf4b9fa56ce211ad2ef, type: 3}
   m_PrefabInstance: {fileID: 1049213753}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1230634907
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1230634909}
-  - component: {fileID: 1230634908}
-  m_Layer: 0
-  m_Name: Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1230634908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230634907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb09d34e4e7c684d97637dedad2574e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1: {fileID: 470168114}
-  player2: {fileID: 1049213754}
-  buttons: {fileID: 56176887}
-  des: {fileID: 1046189502}
---- !u!4 &1230634909
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230634907}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253127553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,8 +1189,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230634908}
-        m_TargetAssemblyTypeName: ControllerScript, Assembly-CSharp
+      - m_Target: {fileID: 1629352531}
+        m_TargetAssemblyTypeName: ControllerFightScript, Assembly-CSharp
         m_MethodName: Button1
         m_Mode: 1
         m_Arguments:
@@ -1572,6 +1509,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430559338}
   m_CullTransparentMesh: 1
+--- !u!1 &1629352528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1629352530}
+  - component: {fileID: 1629352531}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1629352530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629352528}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1629352531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629352528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb09d34e4e7c684d97637dedad2574e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 6355458530281965123}
+  player2: {fileID: 1049213754}
+  buttons: {fileID: 56176887}
+  des: {fileID: 1046189502}
 --- !u!1 &1668989429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,8 +1641,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230634908}
-        m_TargetAssemblyTypeName: ControllerScript, Assembly-CSharp
+      - m_Target: {fileID: 1629352531}
+        m_TargetAssemblyTypeName: ControllerFightScript, Assembly-CSharp
         m_MethodName: Button3
         m_Mode: 1
         m_Arguments:
@@ -1771,7 +1756,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064122441
 GameObject:
@@ -1975,6 +1960,11 @@ PrefabInstance:
       objectReference: {fileID: 262268962}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 628a8d6c7a14ddf4b9fa56ce211ad2ef, type: 3}
+--- !u!1 &6355458530281965123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6355458530214474864, guid: 628a8d6c7a14ddf4b9fa56ce211ad2ef, type: 3}
+  m_PrefabInstance: {fileID: 6355458530281965122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6972550073567524109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2072,3 +2062,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fc279482e868464586d58b5caa72a07, type: 3}
+--- !u!1 &6972550074083335224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6972550073510812975, guid: 8fc279482e868464586d58b5caa72a07, type: 3}
+  m_PrefabInstance: {fileID: 778043671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6972550074083335225 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6972550073510812974, guid: 8fc279482e868464586d58b5caa72a07, type: 3}
+  m_PrefabInstance: {fileID: 778043671}
+  m_PrefabAsset: {fileID: 0}

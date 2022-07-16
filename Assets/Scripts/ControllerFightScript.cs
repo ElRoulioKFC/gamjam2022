@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ControllerScript : MonoBehaviour
+public class ControllerFightScript : MonoBehaviour
 {
     public GameObject player1;
     public GameObject player2;
@@ -24,7 +24,8 @@ public class ControllerScript : MonoBehaviour
         playerTurn = player1;
     }
 
-    public void Button1() {
+    public void Button1()
+    {
         if (!choix.Contains(0) && choix.Count < 2) choix.Add(0);
         else choix.Remove(0);
         if (choix.Count == 2)
@@ -62,12 +63,10 @@ public class ControllerScript : MonoBehaviour
             if (playerTurn == player1)
             {
                 target = player2;
-                playerTurn = player2;
             }
             else
             {
                 target = player1;
-                playerTurn = player1;
             }
             target.GetComponentInChildren<PlayerScript>().Dammage(int.Parse(arg[1]));
         }
@@ -79,7 +78,7 @@ public class ControllerScript : MonoBehaviour
         if (newTurn)
         {
             diceList = playerTurn.GetComponentInChildren<PlayerScript>().Draw();
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 des.GetComponentsInChildren<TextMeshProUGUI>()[i].text = diceList[i];
             }
@@ -95,13 +94,21 @@ public class ControllerScript : MonoBehaviour
             fight = false;
             sleep = true;
         }
-        else if(timer <= 0f)
+        else if (timer <= 0f)
         {
             sleep = false;
+            if (playerTurn == player1)
+            {
+                playerTurn = player2;
+            }
+            else
+            {
+                playerTurn = player1;
+            }
             newTurn = true;
             timer = 0.5f;
         }
-        else if(sleep)
+        else if (sleep)
         {
             timer -= Time.deltaTime;
         }
