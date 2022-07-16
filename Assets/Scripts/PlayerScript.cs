@@ -8,26 +8,10 @@ public class PlayerScript : MonoBehaviour
 {
 
     private int vie;
-    public int vieMax;
+    private int vieMax;
+    public int VieMax { set { vieMax = value; vie = value; Dammage(0); } get { return vieMax; } }
     public List<Dice> pot;
     public GameObject healthBar;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        pot = new List<Dice>();
-        vie = vieMax;
-        string[] type = { Dice.DEGAT, Dice.DEGAT, Dice.DEGAT, Dice.DEGAT, Dice.DEGAT, Dice.DEGAT };
-        string[] value = { "1", "2", "3", "4", "5", "6" };
-        for (int i = 0; i < 10; i++) pot.Add(new Dice("ju", 6, type, value));
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public bool Dammage(int degat) {
         vie -= degat;

@@ -11,7 +11,7 @@ public class ControllerFightScript : MonoBehaviour
     public GameObject buttons;
     public GameObject des;
 
-    private bool newTurn = true;
+    private bool newTurn = false;
     private bool fight = false;
     private bool sleep = false;
     private float timer = 0.5f;
@@ -21,7 +21,13 @@ public class ControllerFightScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        VariableGlobalScript v = GameObject.Find("VariableGlobal").GetComponent<VariableGlobalScript>();
+        player1.GetComponent<PlayerScript>().pot = v.potj1;
+        player1.GetComponent<PlayerScript>().VieMax = 40;
+        player2.GetComponent<PlayerScript>().pot = v.potj2;
+        player2.GetComponent<PlayerScript>().VieMax = v.healthJ2;
         playerTurn = player1;
+        newTurn = true;
     }
 
     public void Button1()
