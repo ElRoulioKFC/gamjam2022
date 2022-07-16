@@ -37,11 +37,11 @@ public class PlayerScript : MonoBehaviour
         return true;
     }
 
-    public List<Dice> Draw(){
-        List<Dice> list = new List<Dice>();
-        list.Add(pot[Random.Range(0, 10)]);
-        list.Add(pot[Random.Range(0, 10)]);
-        list.Add(pot[Random.Range(0, 10)]);
+    public List<string> Draw(){
+        List<string> list = new List<string>();
+        list.Add(pot[Random.Range(0, 10)].GetResult());
+        list.Add(pot[Random.Range(0, 10)].GetResult());
+        list.Add(pot[Random.Range(0, 10)].GetResult());
         return list;
     }
 }
